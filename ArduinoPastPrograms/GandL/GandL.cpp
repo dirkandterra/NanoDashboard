@@ -50,7 +50,11 @@ int sendInfo(uint8_t gauge, uint16_t value){
 			tempData=(int)value;
       tempData=gypsyMath2(tempData);
 			break;
-			
+
+    case 5:
+      mphData=value;
+      break;
+
 		default:
 		case 4:
 			lightData=(int)value;

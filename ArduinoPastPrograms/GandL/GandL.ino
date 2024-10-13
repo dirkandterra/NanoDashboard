@@ -175,13 +175,19 @@ void handle232(){
 
      case '8':
         dataLength-=1;   //Don't count the first byte identifier 
-        printTextToVFD("P",0,2,J_LEFT,vfd);
+        printTextToVFD("L",0,2,J_LEFT,vfd);
         printNumToVFD(1013,2,4,1,J_RIGHT,vfd);
         sendVFD(rx232.data,1);
         break;
 
       case '9':
         prepIt=!prepIt;
+        break;
+      case 'A':
+        sendInfo(5,232);
+        break;
+      case 'B':
+        sendInfo(5,590);
         break;
       default:
         break;
