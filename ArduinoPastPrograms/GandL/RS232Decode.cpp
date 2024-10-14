@@ -219,3 +219,13 @@ void GLData(uint8_t in){
 	else
 		PORTD &= B11011111;
 }
+
+/*
+  G   CS    D7
+  L   Latch D6
+  GL  Data  D5
+  GL  Clk   D4
+  VFD Load  D10
+  VFD CLK   D9
+  VFD Data  D8
+*/
