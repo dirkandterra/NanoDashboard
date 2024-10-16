@@ -1,8 +1,8 @@
 # _ESP_Dashboard_  
 
-_This project uses the ESP8266 hspi Master to drive a 2004 Dodge Intrepid Dashboard._
+_This project uses the a Nano with a MCP2515 to drive a 2004 Dodge Intrepid Dashboard._
 
-![IntrepidSchematic](img\ESPCluster.png)  
+![IntrepidSchematic](img\NanoCluster.png)  
 
 ## How to use  
 
