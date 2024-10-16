@@ -20,6 +20,7 @@ _This project uses the a Nano with a MCP2515 to drive a 2004 Dodge Intrepid Dash
 | VFDDATA   | VFDDATA   | D8   |
 | VFDCLK	| VFDCLK	| D9   |
 | VFD Pls	| VFD Pls	| D10  |
+| Backlight | UC_LMP_DRV| D2   |
 | PB Input  | ODO PB    | D3   |
 | L Turn    | C2-5		| A0   |
 | R Turn    | C1-8      | A1   |
