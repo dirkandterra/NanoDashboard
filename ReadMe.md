@@ -2,7 +2,7 @@
 
 _This project uses the a Nano with a MCP2515 to drive a 2004 Dodge Intrepid Dashboard._
 
-![IntrepidSchematic](img\NanoCluster.png)  
+![IntrepidSchematic](/img/NanoCluster.png)  
 
 ## How to use  
 
@@ -10,50 +10,48 @@ _This project uses the a Nano with a MCP2515 to drive a 2004 Dodge Intrepid Dash
 * 2004 Dodge Intrepid Instrument Panel
 * Connection:  
 
-| Signal    | Intrepid  |ESP8266|
-|-----------|-----------|-------|
-| 3.3V      | NC		| VCC	|
-| SCLK      | D0(SCL)   | GPIO14|
-| VFDCLK	| VFDCLK	| Trans	| 
-| MOSI      | VFD/GLDATA| GPIO13|
-| Gauge CS  | Gauge CS  | GPIO16|
-| Light Pls | Light Pls | GPIO12|
-| VFD Pls	| VFD Pls	| GPIO02|
-| GND       | GND       | GND   |
+| Signal    | Intrepid  | Nano |
+|-----------|-----------|------|
+| 5V        | 5V		| 5V   |
+| GLDATA    | GLDATA	| D4   |
+| GLCLK     | GLCLK 	| D5   |
+| LightLatch| LightLatch| D6   |
+| Gauge CS  | Gauge CS  | D7   |
+| VFDDATA   | VFDDATA   | D8   |
+| VFDCLK	| VFDCLK	| D9   |
+| VFD Pls	| VFD Pls	| D10  |
+| PB Input  | ODO PB    | D3   |
+| L Turn    | C2-5		| A0   |
+| R Turn    | C1-8      | A1   |
+| HighBeam  | C1-10     | A2   |
+| OilPress  | C2-10     | A3   |
+| ABS		| ??		| A4   |
+| Airbag    | ??		| A5   |
+| GND       | GND       | D7   |
 
-### Configure the project  
+* MCP2515 Breakout Board
+* Connection: 
 
-```
-make menuconfig
-```
+| MCP2515   | Nano |
+|-----------|------|
+| INT       |  -   |
+| SCK		| D13  |
+| MOSI      | D11  |
+| MISO	    | D12  |
+| CS to 5V  |  -   |
+| GND       | GND  |
+| 5V    	| 5V   |
 
-* Set serial port under Serial Flasher Options.
-
-
-### Build and Flash  
-
-Build the project and flash it to the board, then run monitor tool to view serial output:
-
-```
-make -j4 flash monitor
-```
-
-(To exit the serial monitor, type ``Ctrl-]``.)
-
-See the Getting Started Guide for full steps to configure and use ESP-IDF to build projects.
-
-## Example Output  
-
-* LOG:  
+### Arduino Library Needed  
 
 ```
-I (233) spi_oled: init gpio
-I (235) gpio: GPIO[12]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0
-I (239) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0
-I (251) spi_oled: init hspi
-I (257) spi_oled: init oled
+https://github.com/coryjfowler/MCP_CAN_lib.git
 ```
+
+* MCP_CAN_lib
+
+### Intrepid Dashboard Help
 
 * Intrepid Schematic (Not Complete):  
 
-  ![IntrepidSchematic](img\IntrepidSchematic.png)  
+  ![IntrepidSchematic](/img/IntrepidSchematic.png)  
